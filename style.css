@@ -1,0 +1,364 @@
+@font-face {
+    font-family: light;
+    src: url(NeueHaasDisplayLight.ttf);
+}
+@font-face {
+    font-family: medium;
+    src: url(NeueHaasDisplayRoman.ttf);
+}
+@font-face {
+    font-family: roman;
+    src: url(NeueHaasDisplayMediu.ttf);
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html,body{
+   height: 100%;
+   width: 100%;   
+   overflow-x: hidden;
+   background-color: #EFEAE3;
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background: #EFEAE3 ;
+    position: relative;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+nav{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  2rem 0rem;
+    font-family: light;
+}
+.navright{
+    display: flex;
+    gap: 1vw;
+}
+
+.navright a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 9;
+}
+
+.navright h4{
+    padding: 10px 20px;
+    border: 1px solid #818181b0;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.navright h4::after{
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0px;
+    bottom: -100%;
+    transition: all ease 0.5s;
+    border-radius: 50%;
+   
+
+    
+}
+
+.navright h4:hover::after{
+   bottom: 0;
+   border-radius: 0px;
+   
+}
+
+.navright h4:hover a{
+    color: #EFEAE3;
+    
+}
+
+#content{
+    /* background-color: aqua; */
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    font-family: roman;
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.218);
+    padding-bottom: 2rem ;
+}
+
+
+#contentleft{
+    /* background-color: aquamarine; */
+    width: 50%;
+    height: 100%;
+    position: relative;
+    
+}
+
+#contentleft h4{
+   position: absolute;
+   bottom: 0rem;
+   /* left:2rem ; */
+
+   font-size: 1.5rem;
+   
+   
+
+}
+
+
+
+#contentright{
+    width: 50%; 
+    height: 100%;
+    text-align: end;
+    position: relative;
+    
+
+}
+
+#contentright h1{
+    font-size: 10rem;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0%;
+    line-height: 8rem;
+}
+
+video{
+    width: 100%;
+    margin: 3rem 0rem;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 10 ;
+}
+/* #smoke{
+    position: absolute;
+    top: 50%;
+
+    
+} */
+
+
+
+#smoke1{
+    height: 50vh; 
+    width: 35vw;
+    background-color: orangered;
+    /* background-color: aqua; */
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+    animation: scale 5s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    right: 0px;
+    top: 36%;
+    filter: blur(20px);
+    /* z-index: 9; */
+}
+
+@keyframes scale{
+    from{transform: scaleX(1);}
+   to{transform: scaleX(2);} 
+}
+
+
+
+#smoke2{
+    height: 60vh;
+    width: 50vw;
+    background-color: rgb(255, 72, 0);
+    border-radius: 500px;
+    animation: move 4s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    right: -20px;
+    top: 40%;
+    filter: blur(20px);
+    
+
+}
+@keyframes move{
+    from{transform: rotate(30deg);}
+    to{transform: rotate(-10deg);}
+}
+
+#smoke3{
+    height: 50vh;
+    width: 30vw;
+    border-radius: 50%;
+    background: orangered;
+    animation: move2 5s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    filter: blur(20px);
+    /* z-index: 9; */
+    right: 0px;
+    top: 40%;
+}
+
+@keyframes move2{
+        from{transform: translate(-20%,-28%);}
+        to{transform:  translate(20%,30%);}
+}
+
+#moving-text{
+       
+        overflow-x: auto;
+        white-space: nowrap;
+        background-color: #EFEAE3;
+        padding-top: 4rem;
+}
+
+#moving-text::-webkit-scrollbar{
+    display: none;
+}
+
+#moving-text .con{
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 20s linear;
+    animation-iteration-count: infinite;
+   
+
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#moving-text .con h1{
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 9rem;
+    font-family: roman;
+    /* background-color: aliceblue; */
+}
+
+#moving-text .con .circle{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: orangered;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 1vh 2vw;
+}
+
+#pagebtm{
+    height: 100vh;
+    margin: 1rem 2rem;
+    display: flex;
+    font-family: medium;
+    margin: 7rem 2rem;
+    position: relative;
+    z-index: 1;
+    /* position: relative; */
+    
+}
+#pg-btm-left{
+    width: 60%;
+}
+
+#pg-btm-left h1{
+    font-size: 4rem;
+    font-family: roman;
+    padding: 4rem 2.1rem;
+    line-height: 4rem;
+}
+#pg-btm-right{
+    width: 40%;
+    padding-top: 12rem;
+    padding-left: 9rem;
+
+}
+
+#pg-btm-right img{
+    width: 20vw ;
+    border-radius: 10px;
+}
+
+#pg-btm-right p{
+    width: 22vw;
+   justify-content: center;
+   margin-top: 50px;
+   font-size: 1rem;
+}
+#movingcircle{
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    z-index: -1;
+}
+
+#movingcircle #cr1{
+    height: 30rem;
+    width: 26rem;
+    background-color: orangered;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation: move3 3s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+
+}
+
+@keyframes move3 {
+    from{
+        transform: translate(5%,-10%);
+    }
+    to{
+        transform: translate(-5%,10%);
+    }
+}
+#movingcircle #cr2{
+    height: 25rem;
+    width:26rem;
+    background-color: orangered;
+    filter: blur(20px);
+    border-radius: 50%;
+    position: absolute;
+    animation: move4 3s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+}
+
+@keyframes move4 {
+    from{
+        transform: translate(-10%,10%);
+    }
+    to{
+        transform: translate(10%,-5%);
+       
+    }
+    
+}
